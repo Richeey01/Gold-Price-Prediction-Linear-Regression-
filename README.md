@@ -41,7 +41,7 @@ pip install joblib
 
 Step 1. Clone the repository
 
-git clone https://github.com/username/gold-price-prediction.githttps://github.com/Richeey01/Gold-Price-Prediction-Linear-Regression-.git
+git clone https://github.com/Richeey01/Gold-Price-Prediction-Linear-Regression-.git
 
 
 Step 2. Go to project folder
