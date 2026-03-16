@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Gold Price Predictor</title>
+</head>
+
+<body>
+
+<h1>Gold Price Prediction</h1>
+
+<h2>Dataset Info</h2>
+
+<p>Total rows in dataset: {{ total_rows }}</p>
+<p>Total columns: {{ total_columns }}</p>
+
+<p>Columns used for prediction:</p>
+<ul>
+{% for col in used_columns %}
+<li>{{ col }}</li>
+{% endfor %}
+</ul>
+
+
+<h2>Sample Data (10 rows)</h2>
+
+{{ sample_data | safe }}
+
+
+<h2>Model Graph</h2>
+
+<img src="{{ url_for('static', filename='graph.png') }}" width="500">
+
+
+<h2>Predict Gold Price</h2>
+
+<form method="post">
+
+<p>Date:</p>
+<input type="date" name="date" required>
+
+<p>Interest Rate:</p>
+<input type="number" step="any" name="interest" required>
+
+<p>USD Index:</p>
+<input type="number" step="any" name="usd" required>
+
+<br><br>
+
+<button type="submit">Predict</button>
+
+</form>
+
+
+{% if prediction %}
+
+<h2>Predicted Gold Price: {{prediction }}</h2>
+
+{% endif %}
+
+<h2>Model Metrics</h2>
+
+<p>Accuracy (R²): {{ r2 }}</p>
+<p>MSE: {{ mse }}</p>
+
+</body>
+
+</html>
